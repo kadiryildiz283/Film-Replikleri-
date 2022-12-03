@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>```
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" href="style/portrait.css" media="screen and (orientation: portrait)">
+    <link rel="stylesheet" type="text/css" href="style/landscape.css" media="screen and (orientation: landscape)">
+    <title>Film replikleri</title>
+</head>
+<body>
+    <div id="replik">
+    </div>
+    <div id="film">
+      <br>
+    </div>
+    <div id="ekleyen">
+    </div>
+    <div id="begenen">
+    </div>
+    <div id="all">
+    </div>
+    <div id="left" onclick="left()"></div>
+    <div id="right" onclick="right()"></div>
+    <div id="heart" onclick="heart()"></div>
+    <div id="random" onclick="random()"></div>
+    <a href="add"><img id="img"src="img/+.png" alt=""></a>
+    <script type="text/javascript">
+    var ch = true;
+    var i = 0;
+    var replik = [];
+    var film = [];
+    var kalp = [];
+    var ekleyen = [];
+    var toplam2 = [];
+
+    function heart() {
+  var copyText = replik[i];
+
+  navigator.clipboard.writeText(copyText);
+
+  alert("Kopyalandı " + copyText);
+
+}
+    <%  for (var i = 0; i < title.length; i++) {%>
+        replik.push('<%=title[i].replik%>');
+        film.push('<%=title[i].film%>');
+        ekleyen.push('<%=title[i].ekleyen%>');
+        kalp.push('<%=title[i].kalp%>');
+      <%}%>
+      toplam2.push('<%=title.length%>');
+      document.getElementById("replik").innerHTML=replik[0];
+      document.getElementById("film").innerHTML=film[0];
+      document.getElementById("ekleyen").innerHTML='<font color="gray"> Ekleyen</font>  <br>'+ekleyen[0];
+      document.getElementById("all").innerHTML='Toplam '+toplam2[0]+ ' tane var <br> Bu replik '+(i+1)+'. sırada.';
+    function right() {
+        i++
+        ch = true
+        var toplam3 = parseInt(toplam2[0])-1;
+        if (i>toplam3) {
+          i = toplam3;
+        }
+        while (ch) {
+          document.getElementById("replik").innerHTML=replik[i];
+          document.getElementById("film").innerHTML=film[i];
+          document.getElementById("ekleyen").innerHTML='<font color="gray"> Ekleyen</font>  <br>'+ekleyen[i];
+          document.getElementById("all").innerHTML='Toplam '+toplam2[0]+ ' tane var <br> Bu replik '+(i+1)+'. sırada.';
+          ch = false;
+        }
+          }
+          function left() {
+              i--;
+              ch = true;
+              if (i<0){
+                i=0;
+              }
+              while (ch) {
+                document.getElementById("replik").innerHTML=replik[i];
+                document.getElementById("film").innerHTML=film[i];
+                document.getElementById("ekleyen").innerHTML='<font color="gray"> Ekleyen</font>  <br>'+ekleyen[i];
+                document.getElementById("all").innerHTML='Toplam '+toplam2[0]+ ' tane var <br> Bu replik '+(i+1)+'. sırada.';
+
+                ch = false;
+              }
+                }
+            function random() {
+                    var random = Math.floor(Math.random() * toplam2[0]);
+                    i=random
+                    ch = true
+                    while (ch) {
+                      document.getElementById("replik").innerHTML=replik[i];
+                      document.getElementById("film").innerHTML=film[i];
+                      document.getElementById("ekleyen").innerHTML='<font color="gray"> Ekleyen</font>  <br>'+ekleyen[i];
+                      document.getElementById("all").innerHTML='Toplam '+toplam2[0]+ ' tane var <br> Bu replik '+(i+1)+'. sırada.';
+                      ch = false;
+                    }
+                      }
+    </script>
+</body>
+</html>

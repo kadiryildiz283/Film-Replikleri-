@@ -1,0 +1,87 @@
+ html{
+        background: url("../img/nihai.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+#left{
+       height: 10vh;
+       width: 20vw;
+       margin-top: 78vh;
+       margin-left: -3vw;
+       position: absolute;
+}
+#right{
+       height: 10vh;
+       width: 20vw;
+       margin-top: 78vh;
+       margin-left: 75vw;
+       position: absolute;
+}
+#heart{
+       height: 10vh;
+       width: 20vw;
+       margin-top: 78vh;
+       margin-left: 50vw;
+       position: absolute;
+}
+#random{
+       height: 10vh;
+       width: 20vw;
+       margin-top: 78vh;
+       margin-left: 25vw;
+       position: absolute;
+}
+#img{
+       height: 8vh;
+       width: 15vw;
+       margin-top: 1.5vh;
+       margin-left: -5vw;
+       position: absolute;
+}
+#replik {
+  height: 30vh;
+  width: 75vw;
+  margin-top: 10vh;
+  margin-left: 10vw;
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+#film {
+  height: 10vh;
+  width: 75vw;
+  margin-top: 40vh;
+  margin-left: 10vw;
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+#ekleyen {
+  height: 10vh;
+  width: 75vw;
+  margin-top: 50vh;
+  margin-left: 10vw;
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+#begenen {
+  height: 10vh;
+  width: 75vw;
+  margin-top: 60vh;
+  margin-left: 10vw;
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+#all {
+  height: 10vh;
+  width: 75vw;
+  margin-top: 70vh;
+  margin-left: 10vw;
+  position: absolute;
+  color: orange;
+  text-align: center;
+}

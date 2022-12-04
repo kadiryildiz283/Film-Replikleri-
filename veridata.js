@@ -19,6 +19,6 @@ const userSchema  = mongoose.Schema({
   }
 });
 
-const veri = mongoose.model('user ',userSchema);
+const veri = mongoose.model("User ",userSchema);
 
 module.exports = veri ;

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>```
+<html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="icon" type="image/x-icon" href="img/icon.png">
     <link rel="stylesheet" type="text/css" href="style/portrait.css" media="screen and (orientation: portrait)">
     <link rel="stylesheet" type="text/css" href="style/landscape.css" media="screen and (orientation: landscape)">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity=
+        "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
     <title>Film replikleri</title>
 </head>
 <body>
@@ -32,7 +37,7 @@
     var kalp = [];
     var ekleyen = [];
     var toplam2 = [];
-
+    var send = { "name":"John", "age":30, "car":null };
     function heart() {
   var copyText = replik[i];
 
@@ -52,6 +57,8 @@
       document.getElementById("film").innerHTML=film[0];
       document.getElementById("ekleyen").innerHTML='<font color="gray"> Ekleyen</font>  <br>'+ekleyen[0];
       document.getElementById("all").innerHTML='Toplam '+toplam2[0]+ ' tane var <br> Bu replik '+(i+1)+'. sırada.';
+      document.getElementById("begenen").innerHTML='<font color="gray"> Beğeni: </font>  <br>'+kalp[0];
+
     function right() {
         i++
         ch = true
@@ -64,6 +71,8 @@
           document.getElementById("film").innerHTML=film[i];
           document.getElementById("ekleyen").innerHTML='<font color="gray"> Ekleyen</font>  <br>'+ekleyen[i];
           document.getElementById("all").innerHTML='Toplam '+toplam2[0]+ ' tane var <br> Bu replik '+(i+1)+'. sırada.';
+          document.getElementById("begenen").innerHTML='<font color="gray"> Beğeni: </font>  <br>'+kalp[i];
+
           ch = false;
         }
           }
@@ -78,6 +87,7 @@
                 document.getElementById("film").innerHTML=film[i];
                 document.getElementById("ekleyen").innerHTML='<font color="gray"> Ekleyen</font>  <br>'+ekleyen[i];
                 document.getElementById("all").innerHTML='Toplam '+toplam2[0]+ ' tane var <br> Bu replik '+(i+1)+'. sırada.';
+                document.getElementById("begenen").innerHTML='<font color="gray"> Beğeni: </font>  <br>'+kalp[i];
 
                 ch = false;
               }
@@ -91,9 +101,27 @@
                       document.getElementById("film").innerHTML=film[i];
                       document.getElementById("ekleyen").innerHTML='<font color="gray"> Ekleyen</font>  <br>'+ekleyen[i];
                       document.getElementById("all").innerHTML='Toplam '+toplam2[0]+ ' tane var <br> Bu replik '+(i+1)+'. sırada.';
+                      document.getElementById("begenen").innerHTML='<font color="gray"> Beğeni: </font>  <br>'+kalp[i];
+
                       ch = false;
                     }
                       }
+var oneclick = true;
+$(document).ready(function () {
+   $("#heart").click(function () {
+     if (oneclick) {
+
+     var begenilen = i;
+      $.post("/index",
+         {
+            name: begenilen,
+            designation: "Professional gamer"
+         });
+         oneclick=false;
+              }
+   });
+});
+
     </script>
 </body>
 </html>

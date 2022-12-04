@@ -109,7 +109,6 @@
 var oneclick = true;
 $(document).ready(function () {
    $("#heart").click(function () {
-     if (oneclick) {
 
      var begenilen = i;
       $.post("/index",
@@ -117,8 +116,6 @@ $(document).ready(function () {
             name: begenilen,
             designation: "Professional gamer"
          });
-         oneclick=false;
-              }
    });
 });
 

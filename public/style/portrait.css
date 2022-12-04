@@ -40,6 +40,13 @@
        margin-left: -5vw;
        position: absolute;
 }
+#img2{
+       height: 8vh;
+       width: 15vw;
+       margin-top: 2.4vh;
+       margin-left: -5vw;
+       float: right;
+}
 #replik {
   height: 30vh;
   width: 75vw;
